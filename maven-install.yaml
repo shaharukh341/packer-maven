@@ -3,18 +3,19 @@
    gather_facts: true
    become: yes
    vars:
-     java_version: openjdk-8-jdk 
+     java_version: java-1.8.0-openjdk.x86_64 
    tasks:
-     - name:
-       debug: var=tomcat_url
      - name: install java 1.8 version 
        yum:
          name: "{{java_version}}"
          state: present
-   tasks:
      - name: install maven
        yum:
          name: "maven"
+         state: present
+     - name: install git
+       yum:
+         name: "git"
          state: present
 
 

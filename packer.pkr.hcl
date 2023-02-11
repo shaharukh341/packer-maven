@@ -2,7 +2,6 @@
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 source "amazon-ebs" "Packer_maven" {
-  name          = "Maven"
   ami_name      = "packer_maven"
   instance_type = "t2.micro"
   region        = "ap-south-1"
